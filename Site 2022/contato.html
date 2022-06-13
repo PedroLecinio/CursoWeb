@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aulas de HTML-5 e CSS-3">
+    <meta name="Keywoards" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Pedro Lecinio"> 
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>AULAS HTML</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <script src="js/mask.js"></script>
+    <script src="js/cep.js"></script>
+    <script src="js/fonte.js"></script>
+    <script src="js/contraste.js"></script>
+
+
+</head>
+<body>
+    <header id="topo">
+        <div id="acessibilidade">
+            <ul id="atalho">
+                <li><a href="#conteudo" accesskey="1" title="Ir para o conteúdo">Ir para o conteúdo [1]</a></li>
+                <li><a href="#menu" accesskey="2" title="Ir para o menu de navegação">Ir para o menu [2]</a></li>
+                <li><a href="#rodape" accesskey="3" title="Ir para o rodape">Ir para o rodape [3]</a></li>
+                <li id="pgacess"><a href="acessibilidade.html" title="Ir para a pagina de acessibilidade">ACESSIBILIDADE</a></li>
+                <li class="contraste"><a href="javascript:void(0);" id="contraste">CONTRASTE</a></li>
+                <li class="contraste"><a href="javascript:void(0);" id="semcontraste">SEM CONTRASTE</a></li>
+                <li class="fonte"><a href="javascript:void(0);" id="aumenta">A +</a></li>
+                <li class="fonte"><a href="javascript:void(0);" id="diminui">A -</a></li>
+            </ul>
+        </div>
+        <img class="imagem" id="logo" src="imagem/logo.png" alt="Logo Obra Social Dom Bosco Horizontal azul, branco e vermelho">
+        <img id="assistencia" src="imagem/assistencia-e-desenvolvimento-social_centralizado.png" alt="Logo assistencia social">
+        <nav> <!--Navegação-->
+            <ul id="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="comentarios.html"> Comentários</a></li>
+                <li><a href="metadados.html">Metadados</a></li>
+                <li><a href="#">Listas</a>
+                    <ul>
+                        <li><a href="lista_ordenada.html">Lista Ordenada</a></li>
+                        <li><a href="lista_nao_ordenada.html">Lista Não Ordenada</a></li>
+                    </ul>
+                </li>  
+                <li><a href="layout.html">Layout</a></li>
+                <li><a href="contato.html">Fale Conosco</a></li>  
+            </ul>
+        </nav>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+    <main id="conteudo">
+        <ul id="breadcrumb">
+            <li><a href="index.html">Início</a></li>
+            <li>Fale Conosco</li>
+        </ul>
+        <br> <br> <h1 id="titulo">FALE CONOSCO</h1>
+        <form name="contato" id="contato" method="post">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label class="required" for="nome">Nome</label><br>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required><br>
+                <label class="required" for="data"> Data de Nascimento </label> <br>
+                <input type="date" name="data" id="data" required> <br>
+                <label class="required" for="cpf"> CPF </label> <br>
+                <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required><br>
+                <label for="telefone">Telefone</label><br>
+                <input type="tel" name="telefone" id="telefone" placeholder="(99)99999-9999"><br>
+            </fieldset>
+            <fieldset>
+                <legend>Dados de Endereço</legend>
+                <label class="required" for="cep">CEP</label><br>
+                <input type="text" name="cep" id="cep" placeholder="99999-999" required><br>
+                <label for="rua">Rua/Av</label><br>
+                <input type="text" name="rua" id="rua"><br>
+                <label class="required" for="numero">Número </label> <br>
+                <input type="number" name="numero" id="numero" required><br>
+                <label class="required" for="complemento">Complemento</label><br>
+                <input type="text" name="complemento" id="complemnto" placeholder="Apto/Bloco..." required> <br>
+                <label for="bairro">Bairro</label><br>
+                <input type="text" name="bairro" id="bairro"><br>
+                <label for="cidade">Cidade</label><br>
+                <input type="text" name="cidade" id="cidade"><br>
+                <label for="uf">Estado</label><br>
+                <input type="text" name="uf" id="uf"><br>
+            </fieldset>
+            <fieldset>
+                <legend> Dados da Mensagem </legend>
+                <label class="required" for="assunto">Assunto </label> <br>
+                <select name="assunto" id="assunto" required>
+                    <option value="" selected disabled>Selecione uma opção</option>
+                    <option value="reclamação">Reclamação</option>
+                    <option value="sugestão">Sugestão</option>
+                    <option value="elogio">Elogio</option>
+                    <option value="outro">Outro</option>
+                </select> <br>
+                <label for="mensagem">Mensagem</label> <br>
+                <textarea name="mensagem" id="mensagem" rows="20" cols="40"></textarea>
+            </fieldset>
+            <input type="submit" name="enviar" id="enviar" value="Enviar">
+            <input type="reset" name="limpar" id="limpar" value="Limpar">
+        </form>
+    </main>
+    <footer id="rodape">
+        <p>Desenvolvido Por Pedro Lecinio <br>
+        Todos os direitos reservados &copy; 2022</p>
+        <ul id="mapa">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="comentarios.html"> Comentários</a></li>
+            <li><a href="metadados.html">Metadados</a></li>
+            <li>Listas</a>
+                <ul>
+                    <li><a href="lista_ordenada.html">Lista Ordenada</a></li>
+                    <li><a href="lista_nao_ordenada.html">Lista Não Ordenada</a></li>
+                </ul>
+            </li>  
+            <li><a href="layout.html">Layout</a></li> 
+            <li><a href="contato.html">Fale Conosco</a></li>  
+        </ul>
+    </footer>  
+</body>
+</html>
